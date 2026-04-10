@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CustomerServiceService, ILogin } from '../../../services/customer-service.service';
 
 @Component({
@@ -19,12 +19,17 @@ password:''
 }
   error = '';
 
-  constructor(private service:CustomerServiceService){}
+ 
+
+  constructor(private service:CustomerServiceService,private router:Router){}
 
   login(){
      this.service.login(this.loginRequest).subscribe({
-      next:()=>{
+      next:(res:any)=>{
         alert('login successful');
+        localStorage.setItem('customer',JSON.stringify(res));
+        this.router.navigate(['/customer/home']);
+
       },
       error:(err)=>{
         alert('login failed: ' +err.message || err.error);

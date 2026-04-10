@@ -1,0 +1,26 @@
+<!-- src/app/layouts/admin-layout/admin-layout.component.html -->
+<div class="admin-layout">
+  <aside class="sidebar">
+    <div class="logo">🛒 ECOM ADMIN</div>
+    <nav>
+      <a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+      <a  routerLinkActive="active">Products</a>
+      <a routerLink="/admin/categories" routerLinkActive="active">Categories</a>
+      <a  routerLinkActive="active">Companies</a>
+      <a routerLinkActive="active">Orders</a>
+      <a  routerLinkActive="active">Feedback</a>
+      <a  routerLinkActive="active">Enquiries</a>
+    </nav>
+    <button class="logout" (click)="logout()">Logout</button>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <h2>Admin Dashboard</h2>
+    </header>
+
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

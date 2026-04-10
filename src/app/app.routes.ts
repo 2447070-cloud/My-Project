@@ -1,5 +1,10 @@
 import { Routes } from '@angular/router';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
+import { CustomerLayoutComponent } from './layouts/customer-layout/customer-layout.component';
+import { customerAuthGuard } from './guards/customer-auth.guard';
+import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { adminAuthGuard } from './guards/admin-auth.guard';
 
 export const routes: Routes = [
     {
@@ -12,5 +17,26 @@ export const routes: Routes = [
             {path:'login',loadComponent:()=> import('./components/user/login/login.component').then(m=>m.LoginComponent)}
 
         ]
+    },    
+    {
+      path:'customer',
+      component:CustomerLayoutComponent,
+      canActivate:[customerAuthGuard],
+      children:[
+        {path:'home',loadComponent:()=>import('./components/customer/home/home.component').then(m=>m.HomeComponent)},
+      ]
+    },
+    {
+      path:'admin/login',
+      component:AdminLoginComponent
+    },
+    {
+      path:'admin',
+      component:AdminLayoutComponent,
+      canActivate:[adminAuthGuard],
+      children:[
+        {path:'dashboard',loadComponent:()=>import('./components/admin/dashboard/dashboard.component').then(m=>m.DashboardComponent)},
+        {path:'categories',loadComponent:()=>import('./components/admin/category/category.component').then(m=>m.CategoryComponent)}
+      ]
     }
 ];

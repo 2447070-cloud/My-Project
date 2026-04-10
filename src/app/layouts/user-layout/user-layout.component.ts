@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-user-layout',
@@ -9,5 +9,15 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './user-layout.component.css'
 })
 export class UserLayoutComponent {
+
+  constructor(private router:Router){}
+
+  @HostListener('document:keydown',['$event'])
+  handleShortcut(event:KeyboardEvent){
+      console.log(event);
+    if(event.ctrlKey && event.altKey && event.key.toLowerCase() ==='a'){
+      this.router.navigate(['/admin/login']);
+    }
+  }
 
 }
