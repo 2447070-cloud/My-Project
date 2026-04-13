@@ -12,10 +12,10 @@ export class UserLayoutComponent {
 
   constructor(private router:Router){}
 
-  @HostListener('document:keydown',['$event'])
+  @HostListener('window:keydown',['$event'])
   handleShortcut(event:KeyboardEvent){
-      console.log(event);
-    if(event.ctrlKey && event.altKey && event.key.toLowerCase() ==='a'){
+    if( event.altKey && event.key.toLowerCase() ==='a'){
+      console.log('Shortcut triggered');
       this.router.navigate(['/admin/login']);
     }
   }
