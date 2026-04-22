@@ -1,12 +1,12 @@
 <div class="card mx-auto mt-5" style="max-width: 400px;">
   <div class="card-body">
-    <h3 class="card-title text-center mb-4">Login</h3>
+    <h3 class="card-title text-center mb-4">Admin Login</h3>
 
     <div *ngIf="message" class="alert alert-danger">{{ message }}</div>
 
     <div class="mb-3">
-      <label class="form-label">Email</label>
-      <input type="email" [(ngModel)]="loginRequest.username" class="form-control" />
+      <label class="form-label">Name</label>
+      <input type="name" [(ngModel)]="loginRequest.username" class="form-control" />
     </div>
 
     <div class="mb-3">
@@ -16,9 +16,17 @@
 
     <button (click)="login()" class="btn btn-primary w-100">
         <span *ngIf="!isLoading">Login</span>
+        </button>
+        <br>
+        <hr>
+
+
+        <button (click)="cancel()" class="btn btn-warning w-100">
+        <span *ngIf="!isLoading">Cancel</span>
+       </button>
+
         <span *ngIf="isLoading" class="spinner-border spinner-border-sm" ></span>
-    </button>
+    
 
    
-  </div>
-</div>
+

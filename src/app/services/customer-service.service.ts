@@ -7,29 +7,33 @@ export interface Customer {
   id?: number;
   name: string;
   email: string;
-  contact: number;
-  address:string;
-  city:string;
-  password:string;
+  mobile: number;
+  address: string;
+  contact:Number;
+  city: string;
+  username: string;
+  password: string;
 }
 
-export interface ILogin{
+export interface ILogin {
   email: string;
-  password:string;
+  password: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerServiceService {
-private apiUrl = `${API_BASE_URL}/customers`
-  constructor(private http: HttpClient) { }
 
-  register(customer: Customer):Observable<Customer> {
+  private apiUrl = `${API_BASE_URL}/customers`;
+
+  constructor(private http: HttpClient) {}
+
+  register(customer: Customer): Observable<Customer> {
     return this.http.post<Customer>(`${this.apiUrl}/register`, customer);
   }
 
-  login(request:ILogin):Observable<Customer>{
-    return this.http.post<Customer>(`${this.apiUrl}/login`,request)
+  login(request: ILogin): Observable<Customer> {
+    return this.http.post<Customer>(`${this.apiUrl}/login`, request);
   }
 }

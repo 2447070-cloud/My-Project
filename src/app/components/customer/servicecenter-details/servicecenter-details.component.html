@@ -1,0 +1,68 @@
+<div class="container my-4" *ngIf="service">
+
+  <div class="card shadow-lg border-0">
+
+    
+    <img 
+      *ngIf="service.image; else noImg"
+      [src]="service.image"
+      class="card-img-top"
+      style="height:300px; object-fit:cover;"
+    />
+
+    <ng-template #noImg>
+      <img 
+        src="assets/no-image.png"
+        class="card-img-top"
+        style="height:300px; object-fit:cover;"
+      />
+    </ng-template>
+
+    
+    <div class="card-body">
+
+      <h3 class="fw-bold text-danger">
+        {{ service.serviceCenterName }}
+      </h3>
+
+      <p><b>Address:</b> {{ service.address }}</p>
+      <p><b>Time:</b> {{ service.serviceTime }}</p>
+      <p><b>Service Type:</b> {{ service.serviceType }}</p>
+      <p><b>Contact:</b> {{ service.contactNumber }}</p>
+      <!-- <p><b>ServiceName</b>{{service.servicename}}</p>
+      <p><b>Rate</b>{{service.rate}}</p> -->
+      
+      <hr>
+
+      
+      <div *ngIf="isLoadServices; else noServices">
+
+        <div 
+          *ngFor="let item of centerServicesList"
+          class="d-flex justify-content-between align-items-center border p-2 mb-2 rounded" >
+
+          <div>
+            <h6 class="mb-0">{{ item.serviceName }}</h6>
+            <small>{{ item.rate | currency:'INR'}}</small>
+          </div>
+
+          <button 
+            class="btn btn-danger btn-sm"
+            (click)="addToCart(item)"
+          >
+            Add to Cart
+          </button>
+
+        </div>
+
+      </div>
+
+      <ng-template #noServices>
+        <p class="text-muted">No services available</p>
+      </ng-template>
+
+    </div>
+
+  </div>
+
+</div>

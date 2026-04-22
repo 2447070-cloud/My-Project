@@ -5,15 +5,15 @@ import { Customer } from '../../services/customer-service.service';
 @Component({
   selector: 'app-customer-layout',
   standalone: true,
-  imports: [RouterOutlet,RouterLink],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './customer-layout.component.html',
   styleUrl: './customer-layout.component.css'
 })
 export class CustomerLayoutComponent implements OnInit {
 
-   customer:Customer|null=null;
+  customer: Customer | null = null;
 
-   constructor(private router:Router){}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     const store = localStorage.getItem('customer');
@@ -22,7 +22,7 @@ export class CustomerLayoutComponent implements OnInit {
 
   logout(){
     localStorage.removeItem('customer');
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);   
   }
 
 }

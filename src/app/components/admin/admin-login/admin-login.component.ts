@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
   styleUrl: './admin-login.component.css'
 })
 export class AdminLoginComponent {
+cancel() {
+throw new Error('Method not implemented.');
+}
 loginRequest:IAdmin={
   username:'',
   password:''

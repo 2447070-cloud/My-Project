@@ -1,46 +1,37 @@
-.user-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* 🔴 Red Gradient Navbar */
+.custom-navbar {
+  background: linear-gradient(90deg, #1a0000, #660000, #b30000);
+  backdrop-filter: blur(10px);
 }
 
-.header {
-  background: #4f46e5;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.nav a {
-  color: white;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 500;
+/* Hover Effect */
+.nav-link {
   transition: 0.3s;
 }
 
-.nav a:hover,
-.nav a.active {
-  color: #facc15;
+.nav-link:hover {
+  color: #ff4d4d !important;
+  transform: translateY(-2px);
 }
 
-.content {
-  flex: 1;
-  padding: 2rem;
-  background-color: #f8fafc;
+/* Dropdown */
+.dropdown-menu {
+  border-radius: 12px;
 }
 
-.footer {
-  background: #111827;
-  color: #9ca3af;
-  text-align: center;
-  padding: 1rem 0;
+.dropdown-item:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+/* Buttons */
+.btn-danger {
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-danger:hover {
+  transform: scale(1.05);
+  background-color: #cc0000;
 }

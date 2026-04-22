@@ -1,0 +1,83 @@
+.container {
+  max-width: 900px;   /* 🔥 form मोठा */
+}
+
+/* FORM BOX */
+.form-box {
+  padding: 30px;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+/* LABEL */
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* INPUT */
+.form-control {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.form-control:focus {
+  border-color: #ff3c00;
+  box-shadow: 0 0 8px rgba(255, 60, 0, 0.4);
+}
+
+/* 🔥 BUTTON GROUP */
+.button-group {
+  margin-top: 20px;
+}
+
+/* BASE BUTTON */
+.custom-btn {
+  border-radius: 30px;
+  padding: 10px 18px;
+  margin: 8px;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s;
+  color: #fff;
+}
+
+/* COLORS */
+.custom-btn {
+  background: linear-gradient(45deg,  #c62828, #e53935);
+}
+
+.custom-btn.save {
+  background: linear-gradient(45deg, #c62828, #e53935 );
+}
+
+.custom-btn.update {
+  background: linear-gradient(45deg,  #c62828, #e53935);
+  
+}
+
+.custom-btn.delete {
+  background: linear-gradient(45deg, #c62828, #e53935);
+}
+
+.custom-btn.cancel {
+  background: linear-gradient(45deg,  #c62828, #e53935);
+}
+
+/* HOVER EFFECT */
+.custom-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* TABLE */
+.table-box {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table {
+  text-align: center;
+}

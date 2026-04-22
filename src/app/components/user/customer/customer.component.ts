@@ -2,39 +2,41 @@ import { Component } from '@angular/core';
 import { Customer, CustomerServiceService } from '../../../services/customer-service.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-customer',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule,RouterLink],
   templateUrl: './customer.component.html',
   styleUrl: './customer.component.css'
 })
 export class CustomerComponent {
-
-  customer:Customer={
+customer :Customer ={
     name:'',
     address:'',
+    email:'',
+    mobile:0,
     city:'',
     contact:0,
-    email:'',
+    username:'',
     password:''
-  }
+}
+error='';
+ response='';
 
-  error='';
+  constructor(private service: CustomerServiceService){}
 
-  constructor(private service:CustomerServiceService){
-  }
+ save(){
+    this.service.register(this.customer).subscribe({
+      next:(res:any)=>{
+        this.response="Registration Successful";
 
-  save(){
-     this.service.register(this.customer).subscribe({
-      next:(res:Customer)=>{
-          alert("Resgisted...!!!");
       },
-      error:(err)=>{
-       this.error = err.error||err.message ||  "Resgitrration Failed";
-       console.error("Error while regsiter",err);
-      }
-     })
-  }
+      error:(err:any)=>{
+      this.error = err.error || err.message || "Registration Failed";
+      console.error("Error while register",err);
+    }
+ })
+    }
 }

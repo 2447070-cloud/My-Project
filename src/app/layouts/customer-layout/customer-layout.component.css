@@ -1,0 +1,71 @@
+/* 🔴 Navbar Gradient Style */
+.custom-navbar {
+  background: linear-gradient(90deg, #1f1c2c, #b31217);
+  padding: 10px 0;
+}
+
+/* 🔹 Brand Logo */
+.navbar-brand {
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #fff !important;
+}
+
+/* 🔹 Nav Links */
+.navbar-nav .nav-link {
+  color: #f1f1f1 !important;
+  margin-right: 15px;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover {
+  color: #ffd369 !important;
+  transform: translateY(-1px);
+}
+
+/* 🔹 Login Button */
+.btn-login {
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 5px 15px !important;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #fff;
+  color: #b31217 !important;
+}
+
+/* 🔹 Signup Button */
+.btn-signup {
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* 🔹 Page Background */
+.main-page {
+  background: #f4f6f9;
+}
+
+/* 🔹 Content Box (Main Area) */
+.content-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  min-height: 500px;
+}
+
+/* 🔹 Smooth Page Feel */
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🔹 Responsive Fix */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    margin-right: 0;
+    padding: 10px 0;
+  }
+}

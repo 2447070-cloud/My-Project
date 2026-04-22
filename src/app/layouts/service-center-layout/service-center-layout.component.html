@@ -1,0 +1,66 @@
+<div class="main-page d-flex flex-column min-vh-100">
+
+  <!-- 🔥 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow sticky-top">
+    <div class="container">
+
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold fs-4">
+        🚗 AutoCare <span class="text-danger">Service</span>
+      </a>
+
+      <!-- Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!-- LEFT -->
+        <ul class="navbar-nav me-auto fw-semibold">
+
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">🏠 Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/service/add-service">➕ Add Service</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/notification">🔔 Notification</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/myprofile">👤 My Profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ViewPickupRequest">📦 Pickup Request</a>
+          </li>
+
+        </ul>
+
+        <!-- RIGHT -->
+        <ul class="navbar-nav align-items-center">
+
+          <li class="nav-item">
+            <button class="btn btn-danger logout-btn ms-3" (click)="logout()">
+              🚪 Logout
+            </button>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container flex-grow-1 content-box my-4">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

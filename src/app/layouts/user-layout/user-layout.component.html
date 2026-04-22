@@ -1,51 +1,81 @@
-<div class="d-flex flex-column min-vh-100 bg-light">
+<div class="d-flex flex-column min-vh-100 bg-dark text-light">
 
-  <!-- ✅ Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <!-- 🔥 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top custom-navbar">
     <div class="container">
-         <a class="navbar-brand fw-bold text-primary">HydroPonic</a>
 
-      <!-- Toggler -->
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold fs-4 text-warning">
+        🚗 AutoCare
+      </a>
+
+      <!-- Toggle -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-       <ul class="navbar-nav fw-medium">
-         <li class="nav-item">
-            <a class="nav-link" routerLink="/">
-              Home
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link">
-              About
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" routerLink="/enquiry">
-              Enquiry
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link">
-              Product
-            </a>
-          </li>
-       </ul>
 
-        <ul class="navbar-nav fw-medium align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login">Login</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" routerLink="/signUp" >Sign Up</a>
-            </li>
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!-- Left -->
+        <ul class="navbar-nav me-auto fw-semibold">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">🏠 Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">ℹ️ About</a>
+          </li>
+
+          
+
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/service_center">Service-Center</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav align-items-center">
+
+          <!-- Login Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle btn btn-outline-warning px-3 ms-2"
+               data-bs-toggle="dropdown">
+
+              Login
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+              <li>
+                <a class="dropdown-item" routerLink="/login">
+                  👤 Customer Login
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/service-center-login">
+                  🚗 Service Center
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Signup -->
+          <li class="nav-item">
+            <a class="btn btn-warning ms-3 px-4" routerLink="/signUp">
+              Sign Up
+            </a>
+          </li>
 
         </ul>
 
-
+      </div>
     </div>
   </nav>
+
+  <!-- 🔥 Content -->
   <div class="container flex-grow-1 my-4">
     <router-outlet></router-outlet>
   </div>
+
 </div>

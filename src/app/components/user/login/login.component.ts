@@ -7,33 +7,41 @@ import { CustomerServiceService, ILogin } from '../../../services/customer-servi
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink,FormsModule,CommonModule],
+  imports: [RouterLink, FormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
 
-  loginRequest:ILogin={
-email:'',
-password:''
-}
+  loginRequest: ILogin = {
+    email: '',
+    password: ''
+  };
+
   error = '';
 
- 
+  constructor(
+    private service: CustomerServiceService,
+    private router: Router
+  ) {}
 
-  constructor(private service:CustomerServiceService,private router:Router){}
+  login() {
+    console.log("Login clicked");
 
-  login(){
-     this.service.login(this.loginRequest).subscribe({
-      next:(res:any)=>{
-        alert('login successful');
-        localStorage.setItem('customer',JSON.stringify(res));
+    this.service.login(this.loginRequest).subscribe({
+      next: (res: any) => {
+        console.log("Login Success", res);
+
+        
+        localStorage.setItem('customer', JSON.stringify(res));
+
+        
         this.router.navigate(['/customer/home']);
-
       },
-      error:(err)=>{
-        alert('login failed: ' +err.message || err.error);
+      error: (err) => {
+        console.log("Login Failed", err);
+        this.error = "Invalid email or password";
       }
-     })
+    });
   }
 }

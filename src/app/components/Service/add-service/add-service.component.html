@@ -1,0 +1,85 @@
+<div class="container mt-5">
+
+  <h3 class="text-center mb-4 text-danger fw-bold">🚗 Add Service</h3>
+
+  <div class="form-box shadow-lg">
+
+    <form (ngSubmit)="onSubmit()">
+
+      <!-- ROW -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <label>Service Name</label>
+          <input type="text" class="form-control"
+            [(ngModel)]="service.serviceName"
+            name="serviceName"
+            required>
+        </div>
+
+        <div class="col-md-6">
+          <label>Service Rate</label>
+          <input type="number" class="form-control"
+            [(ngModel)]="service.rate"
+            name="rate"
+            required>
+        </div>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="text-center button-group">
+
+        <button type="button" class="btn custom-btn"
+          (click)="addNew()">➕ Add</button>
+
+        <button type="submit" class="btn custom-btn save"
+          >💾 Save</button>
+
+        <button type="button" class="btn custom-btn update"
+          (click)="update()">✏️ Update</button>
+
+        <button type="button" class="btn custom-btn delete"
+          (click)="delete()">🗑 Delete</button>
+
+        <button type="button" class="btn custom-btn cancel"
+          (click)="cancel()">❌ Cancel</button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-box mt-5 shadow">
+
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Select</th>
+          <th>Id</th>
+          <th>Service Center</th>
+          <th>Service Name</th>
+          <th>Rate</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let s of serviceList">
+          <td>
+            <button class="btn btn-sm btn-outline-danger"
+              (click)="selectService(s)">
+              Select
+            </button>
+          </td>
+          <td>{{ s.id }}</td> 
+          <td>{{ s.servicecenter?.serviceCenterName }}</td>
+          <td>{{ s.serviceName }}</td>
+          <td>{{ s.rate }}</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

@@ -1,57 +1,60 @@
-<div class="d-flex flex-column min-vh-100 bg-light">
+<div class="main-page d-flex flex-column min-vh-100">
 
-  <!-- ✅ Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <!-- 🔴 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top custom-navbar">
     <div class="container">
-         <a class="navbar-brand fw-bold text-primary">HydroPonic</a>
 
-      <!-- Toggler -->
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold text-uppercase">
+        🚗 AutoCare
+      </a>
+
+      <!-- Toggle -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-       <ul class="navbar-nav fw-medium">
-         <li class="nav-item">
-            <a class="nav-link" routerLink="/customer/home"> 
-              Home
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link">
-              About
-            </a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link">
-              Product
-            </a>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!-- Left -->
+        <ul class="navbar-nav me-auto fw-medium">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customer/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/customer/feedback">
-              Feedback
-            </a>
+            <a class="nav-link">About</a>
           </li>
-           <li class="nav-item">
-            <a class="nav-link">
-              Cart
-            </a>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customer/feedback">Feedback</a>
           </li>
-       </ul>
-
-        <ul class="navbar-nav fw-medium align-items-center">
-            <li class="nav-item">
-              <span>{{customer?.name }}</span>
-              <!-- <span>{{customer?.email }}</span> -->
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" (click)="logout()" >LogOut</a>
-            </li>
-
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customer/service_center">Service Center</a>
+          </li>
+          
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/customer/servicecenter_details">Service Details</a>
+          </li> -->
         </ul>
 
+        <!-- Right -->
+        <ul class="navbar-nav fw-medium">
+          <li class="nav-item">
+            <a class="nav-link btn-login" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="btn btn-danger px-3 btn-signup" routerLink="/signUp">Sign Up</a>
+          </li>
+        </ul>
 
+      </div>
     </div>
   </nav>
-  <div class="container flex-grow-1 my-4">
+
+  <!-- Content -->
+  <div class="container flex-grow-1 content-box my-4">
     <router-outlet></router-outlet>
   </div>
+
 </div>

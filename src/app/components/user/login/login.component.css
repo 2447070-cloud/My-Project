@@ -1,0 +1,81 @@
+/* 🔥 SAME HERO BACKGROUND AS HOME */
+.page {
+  height: 100vh;
+  width: 100%;
+
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://images.unsplash.com/photo-1503376780353-7e6692767b70');
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 Glass Card */
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  color: white;
+  padding: 25px;
+}
+
+/* Heading */
+.login-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Input */
+.form-control {
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+}
+
+/* Focus */
+.form-control:focus {
+  box-shadow: 0 0 8px #ff3c00;
+  outline: none;
+}
+
+/* 🔥 SAME BUTTON AS HOME */
+.btn-primary {
+  background: #ff3c00;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Hover */
+.btn-primary:hover {
+  background: #ff5722;
+  transform: scale(1.05);
+}
+
+/* Error */
+.alert-danger {
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Link */
+a {
+  color: #ffb199;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
